@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Infraestructure", "SalesTaxes\SalesTaxes.Infraestructure.csproj", "{CCFF0652-F415-449E-83FE-03BCB760EB21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTaxes.Domain", "SalesTaxes.Domain\SalesTaxes.Domain.csproj", "{8F05B870-1962-45D9-A077-8642184B3F8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Domain", "SalesTaxes.Domain\SalesTaxes.Domain.csproj", "{8F05B870-1962-45D9-A077-8642184B3F8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTaxes.Application", "SalesTaxes.Application\SalesTaxes.Application.csproj", "{1343A25F-BCF7-4BE0-ADAD-A877EA877218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Application", "SalesTaxes.Application\SalesTaxes.Application.csproj", "{1343A25F-BCF7-4BE0-ADAD-A877EA877218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTaxes.Main", "SalesTaxes.Main\SalesTaxes.Main.csproj", "{F8DB7AAB-864D-4F23-869F-E3EA6521EB96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Main", "SalesTaxes.Main\SalesTaxes.Main.csproj", "{F8DB7AAB-864D-4F23-869F-E3EA6521EB96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTaxes.Tests", "SalesTaxes.Tests\SalesTaxes.Tests.csproj", "{313C8B24-7586-4325-B8FC-F312F4E7ED38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTaxes.Tests", "SalesTaxes.Tests\SalesTaxes.Tests.csproj", "{313C8B24-7586-4325-B8FC-F312F4E7ED38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesTaxes.Infraestructure", "SalesTaxes.Infraestucture\SalesTaxes.Infraestructure.csproj", "{F4697CFD-14C2-456C-96E1-CD67EC7025E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CCFF0652-F415-449E-83FE-03BCB760EB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCFF0652-F415-449E-83FE-03BCB760EB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCFF0652-F415-449E-83FE-03BCB760EB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCFF0652-F415-449E-83FE-03BCB760EB21}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8F05B870-1962-45D9-A077-8642184B3F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8F05B870-1962-45D9-A077-8642184B3F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F05B870-1962-45D9-A077-8642184B3F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{313C8B24-7586-4325-B8FC-F312F4E7ED38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{313C8B24-7586-4325-B8FC-F312F4E7ED38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{313C8B24-7586-4325-B8FC-F312F4E7ED38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4697CFD-14C2-456C-96E1-CD67EC7025E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4697CFD-14C2-456C-96E1-CD67EC7025E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4697CFD-14C2-456C-96E1-CD67EC7025E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4697CFD-14C2-456C-96E1-CD67EC7025E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
