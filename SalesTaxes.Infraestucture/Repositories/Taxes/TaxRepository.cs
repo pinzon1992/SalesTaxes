@@ -18,8 +18,9 @@ namespace SalesTaxes.Infraestructure.Repositories.Taxes
             taxes.Add(new Tax { Id=1, Name= "book", Percentage = 0});
             taxes.Add(new Tax { Id = 1, Name = "chocolate", Percentage = 0 });
             taxes.Add(new Tax { Id = 1, Name = "pills", Percentage = 0 });
-            taxes.Add(new Tax { Id = 1, Name = "imported", Percentage = 0 });
-            taxes.Add(new Tax { Id = 1, Name = "basic", Percentage = 0 });
+            taxes.Add(new Tax { Id = 1, Name = "imported", Percentage = 0.05m});
+            taxes.Add(new Tax { Id = 1, Name = "perfume", Percentage = 0.1m});
+            taxes.Add(new Tax { Id = 1, Name = "cd", Percentage = 0.1m });
         }
 
         public ICollection<Tax> GetAllTaxes()

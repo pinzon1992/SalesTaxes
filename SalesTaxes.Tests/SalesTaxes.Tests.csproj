@@ -23,7 +23,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SalesTaxes.Domain\SalesTaxes.Domain.csproj" />
-    <ProjectReference Include="..\SalesTaxes\SalesTaxes.Infraestructure.csproj" />
+    <ProjectReference Include="..\SalesTaxes.Infraestucture\SalesTaxes.Infraestructure.csproj" />
+    <ProjectReference Include="..\SalesTaxes.Main\SalesTaxes.Main.csproj" />
   </ItemGroup>
 
 </Project>

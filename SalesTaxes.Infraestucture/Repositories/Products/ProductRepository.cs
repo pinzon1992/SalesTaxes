@@ -1,6 +1,7 @@
 ﻿using SalesTaxes.Domain.Products;
 using SalesTaxes.Infraestructure.DataAccess.Interfaces;
 using SalesTaxes.Infraestructure.Repositories.Interfaces;
+using SalesTaxes.Infraestructure.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace SalesTaxes.Infraestructure.Repositories.Products
 
         public ICollection<Product> GetAllProducts()
         {
+
             List<Product> products;
             var data = _fileReader.ReadAllText();
             if  (!string.IsNullOrEmpty(data)){
@@ -32,14 +34,16 @@ namespace SalesTaxes.Infraestructure.Repositories.Products
                     var product_splitted = item.Split(" at ");
                     var product_quantity_name = product_splitted[0].Split(" ");
 
+                    string product_name = DataManipulation.JoinStrArray(product_quantity_name, 0);
+
                     Product product = new Product
                     {
                         Id = counter,
-                        Name = product_quantity_name[1],
+                        Name = product_name,
                         Quantity = Convert.ToInt32(product_quantity_name[0]),
-                        Price = Convert.ToDecimal(product_splitted[1])
+                        Price = Convert.ToDecimal(product_splitted[1]),
                     };
-                    products.Append(product);
+                    products.Add(product);
                 }
             }
             else

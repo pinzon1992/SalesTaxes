@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalesTaxes.Application.Taxes.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,8 @@ namespace SalesTaxes.Application.Products.Dtos
 
         public decimal Price { get; set; }
 
-        public decimal Quantity { get; set; }
+        public int Quantity { get; set; }
 
-        public decimal TaxApplied { get; set; }
+        public ICollection<TaxDto> TaxesApplied { get; set; }
     }
 }
