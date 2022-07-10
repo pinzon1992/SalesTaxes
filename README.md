@@ -28,7 +28,9 @@ To run the console app on any OS(windows, linux, mac) is necesary have installed
 ## Architecture
 
 The input format for the information to be processed, are a txt and json files.
+
 **TXT file:** Contains the differents input scenarios
+
 **JSON file:** Contains product types with product names associated, for make the rules to apply different taxes on the products.
 
 To solve the proposed exercise DDD has been used, after analizing the input format, we can observe that three Domain entities exists: Product, ProductTypes and Tax, these entities are part of Domain Layer,  to work with this entities Repository Pattern also has been used on the Infrastucture Layer, to work with business logic an Application Layer has been used.
