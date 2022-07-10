@@ -1,10 +1,5 @@
 ﻿using SalesTaxes.Infraestructure.DataAccess;
 using SalesTaxes.Infraestructure.DataAccess.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalesTaxes.Tests
 {
@@ -12,14 +7,16 @@ namespace SalesTaxes.Tests
     public class DataAccessTests
     {
         [Fact]
-        public void ReadFileTest()
+        public void ReadFileProductTest()
         {
             //Arrange
-            string filePath = @"D:\Documents\source\repos\number8\backend\SalesTaxes\SalesTaxes.Main\input1.txt";
-            IFileReader fileReader = new FileReader(filePath);
+            string path = Utils.GetPath();
+            var directory = Path.GetDirectoryName(path);
+            string filePath = directory + @"\" + "input1.txt";
+            IFileReader fileReader = new FileReader(filePath, "");
 
             //Act
-            var result = fileReader.ReadAllText();
+            var result = fileReader.ReadAllProductText();
 
             Console.WriteLine(result);
 

@@ -18,7 +18,8 @@ namespace SalesTaxes.Main
     {
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
-            string filepath = args[0];
+            string productFilePath = args[0];
+            string productTypesFilePath = args[1];
             var hostBuilder = Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((context, builder) =>
                 {
@@ -26,7 +27,7 @@ namespace SalesTaxes.Main
                 })
                 .ConfigureServices((context, services) =>
                 {
-                    services.AddInfrastructure(filepath);
+                    services.AddInfrastructure(productFilePath, productTypesFilePath);
                     services.AddTransient<IProductService, ProductService>();
                     services.AddTransient<ITaxService, TaxService>();
 

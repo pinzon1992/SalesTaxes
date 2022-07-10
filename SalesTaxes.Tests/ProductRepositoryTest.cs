@@ -3,7 +3,6 @@ using SalesTaxes.Infraestructure.DataAccess;
 using SalesTaxes.Infraestructure.DataAccess.Interfaces;
 using SalesTaxes.Infraestructure.Repositories.Interfaces;
 using SalesTaxes.Infraestructure.Repositories.Products;
-using System.Runtime.CompilerServices;
 
 namespace SalesTaxes.Tests
 {
@@ -13,10 +12,10 @@ namespace SalesTaxes.Tests
         public void GetAllProductsTest()
         {
             //Arrange
-            string path = GetPath();
+            string path = Utils.GetPath();
             var directory = Path.GetDirectoryName(path);
             string filePath = directory + @"\" + "input1.txt";
-            IFileReader fileReader = new FileReader(filePath);
+            IFileReader fileReader = new FileReader(filePath, "");
             IProductRepository productRepository = new ProductRepository(fileReader);
 
             //Act
@@ -24,11 +23,6 @@ namespace SalesTaxes.Tests
 
             //Assert
             Assert.IsType<List<Product>>(products);
-        }
-
-        static string GetPath([CallerFilePath] string fileName = null)
-        {
-            return fileName;
         }
     }
 }

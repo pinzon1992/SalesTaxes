@@ -1,25 +1,20 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using SalesTaxes.Infraestructure.DataAccess;
 using SalesTaxes.Infraestructure.DataAccess.Interfaces;
 using SalesTaxes.Infraestructure.Repositories.Interfaces;
 using SalesTaxes.Infraestructure.Repositories.Products;
 using SalesTaxes.Infraestructure.Repositories.Taxes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalesTaxes.Infraestructure
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, string FilePath)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, string productFilePath, string productTypesFilePath)
         {
             // Repository Dependency Injection
-            services.AddSingleton<IFileReader>(new FileReader(FilePath));
+            services.AddSingleton<IFileReader>(new FileReader(productFilePath, productTypesFilePath));
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IProductTypeRepository, ProductTypeRepository>();
             services.AddTransient<ITaxRepository, TaxRepository>();
 
             return services;

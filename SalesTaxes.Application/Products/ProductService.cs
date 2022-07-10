@@ -1,12 +1,9 @@
 ﻿using SalesTaxes.Application.Products.Dtos;
 using SalesTaxes.Application.Products.Interfaces;
 using SalesTaxes.Application.Taxes.Dto;
+using SalesTaxes.Domain.Products;
+using SalesTaxes.Domain.Taxes;
 using SalesTaxes.Infraestructure.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalesTaxes.Application.Products
 {
@@ -14,11 +11,13 @@ namespace SalesTaxes.Application.Products
     {
         private readonly IProductRepository _productRepository;
         private readonly ITaxRepository _taxRepository;
+        private readonly IProductTypeRepository _productTypeRepository;
 
-        public ProductService(IProductRepository productRepository, ITaxRepository taxRepository)
+        public ProductService(IProductRepository productRepository, ITaxRepository taxRepository, IProductTypeRepository productTypeRepository)
         {
             _productRepository = productRepository;
             _taxRepository = taxRepository;
+            _productTypeRepository = productTypeRepository;
         }
 
         public ICollection<ProductDto> GetAllProducts()
@@ -36,8 +35,10 @@ namespace SalesTaxes.Application.Products
 
         public ICollection<ProductDto> GetTaxedProducts()
         {
-            var products = _productRepository.GetAllProducts();
-            var taxes = _taxRepository.GetAllTaxes();
+            ICollection<Product> products = _productRepository.GetAllProducts();
+            ICollection<Tax> taxes = _taxRepository.GetAllTaxes();
+
+            products = SetProductType(products);
 
             foreach (var product in products)
             {
@@ -56,6 +57,18 @@ namespace SalesTaxes.Application.Products
                     Percentage = y.Percentage
                 }).ToList()
             }).ToList();
+        }
+
+        private ICollection<Product> SetProductType(ICollection<Product> products)
+        {
+            ICollection<ProductType> productTypes = _productTypeRepository.GetAllProductTypes();
+
+            foreach (var product in products)
+            {
+                product.ProductType = productTypes.FirstOrDefault(x => x.AssociatedProductNames.Any(y => y == product.Name));
+            }
+
+            return products;
         }
     }
 }

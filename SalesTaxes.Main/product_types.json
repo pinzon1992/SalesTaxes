@@ -1,0 +1,20 @@
+﻿{
+  "product_types": [
+    {
+      "Name": "food",
+      "AssociatedProductNames": [ "Chocolate bar", "Imported box of chocolates" ]
+    },
+    {
+      "Name": "medical",
+      "AssociatedProductNames": [ "Packet of headache pills" ]
+    },
+    {
+      "Name": "book",
+      "AssociatedProductNames": [ "Book" ]
+    },
+    {
+      "Name": "other",
+      "AssociatedProductNames": [ "Music CD", "Imported bottle of perfume", "Bottle of perfume" ]
+    }
+  ]
+}

@@ -2,8 +2,8 @@
 
 namespace SalesTaxes.Infraestructure.Repositories.Interfaces
 {
-    public interface IProductRepository
+    public interface IProductTypeRepository
     {
-        ICollection<Product> GetAllProducts();
+        ICollection<ProductType> GetAllProductTypes();
     }
 }

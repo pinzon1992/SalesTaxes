@@ -1,23 +1,41 @@
 ﻿using SalesTaxes.Infraestructure.DataAccess.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalesTaxes.Infraestructure.DataAccess
 {
     public class FileReader : IFileReader
     {
-        private readonly string _filePath;
-        public FileReader(string filePath)
+        private readonly string _productFilePath;
+        private readonly string _productTypesFilePath;
+        public FileReader(string productFilePath, string productTypesFilePath)
         {
-            _filePath = filePath;
+            _productFilePath = productFilePath;
+            _productTypesFilePath = productTypesFilePath;
         }
 
-        public string ReadAllText()
+        public string ReadAllProductText()
         {
-            return File.ReadAllText(_filePath);
+            try
+            {
+                return File.ReadAllText(_productFilePath);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            
+        }
+
+        public string ReadAllProductTypesText()
+        {
+            try
+            {
+                return File.ReadAllText(_productTypesFilePath);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
         }
     }
 }

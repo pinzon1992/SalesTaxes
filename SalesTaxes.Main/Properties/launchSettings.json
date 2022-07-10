@@ -2,7 +2,7 @@
   "profiles": {
     "SalesTaxes.Main": {
       "commandName": "Project",
-      "commandLineArgs": "D:\\Documents\\source\\repos\\number8\\backend\\SalesTaxes\\SalesTaxes.Main\\input1.txt"
+      "commandLineArgs": "input1.txt tax_categories.json"
     }
   }
 }
