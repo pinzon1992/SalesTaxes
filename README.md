@@ -58,4 +58,6 @@ The code has the following estructure:
     
 The console app needs to be executed from terminal, we need to be located in the directory where **SalesTaxes.Main.csproj** reside, once we are located in this directory, we could execute the following command:
 **dotnet run input_file.txt product_types.json**
-the argument "input_file.txt" is a reference for text file containing the data that are going to be processed, product_types.json is a reference for json file that contains the product names associated to a type of product; in this arguments we can pass a full path of file, or if the file exists at the same directory we can pass only the name with the file extension
+the argument "input_file.txt" is a reference for text file containing the data that are going to be processed, **product_types.json** is a reference for json file that contains the product names associated to a type of product; in this arguments we can pass a full path of file, or if the file exists at the same directory we can pass only the name with the file extension.
+
+If you want to add custom products, you need add product in the input file and the product_types.json
