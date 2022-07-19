@@ -2,7 +2,7 @@
   "profiles": {
     "SalesTaxes.Main": {
       "commandName": "Project",
-      "commandLineArgs": "input1.txt tax_categories.json"
+      "commandLineArgs": "input1.txt product_types.json"
     }
   }
 }
